@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/leohsmedeiros/ShimmerFX'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'Leonardo Medeiros' => 'leohsmedeiros@gmail.com' }
-  s.source       = { :git => 'https://github.com/leohsmedeiros/ShimmerFX.git', :branch => "main" }
+  s.source       = { :git => 'https://github.com/leohsmedeiros/ShimmerFX.git', :tag => '1.0.0' }
   s.ios.deployment_target = '15.0'
   s.source_files  = 'Sources/ShimmerFX/**/*.{swift,h,m}'
   s.swift_version = '5.0'
