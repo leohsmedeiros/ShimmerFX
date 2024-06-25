@@ -68,7 +68,7 @@ private struct ShimmerModifier: ViewModifier {
 }
 
 extension View {
-    @ViewBuilder func shimmerize(
+    @ViewBuilder public func shimmerize(
         active: Bool = true,
         shouldAddHideMask: Bool = true,
         hideMaskColor: Color = Color.gray,
