@@ -31,5 +31,5 @@ struct ShimmerizedView: View {
 
 ### CocoaPods
 ```ruby
-pod 'ShimmerFX', '~> 1.0'
+pod 'ShimmerFX', '~> v1.0'
 ```
