@@ -18,7 +18,7 @@ private struct ShimmerModifier: ViewModifier {
     private let animationDuration: TimeInterval
     private let animationDelay: TimeInterval
     
-    @State private var isInitialState = true
+    @State private var isAnimating = false
     
     public init(hide: Bool, hideMaskColor: Color, hideMaskRadius: CGFloat, gradient: Gradient?, animationDuration: TimeInterval, animationDelay: TimeInterval) {
         self.hide = hide
@@ -31,7 +31,7 @@ private struct ShimmerModifier: ViewModifier {
         self.animationDelay = animationDelay
     }
     
-    @ViewBuilder private func applyHideMaskOnContent(content: Content) -> some View {
+    @ViewBuilder private func applyHideMaskOnContentIfNecessary(content: Content) -> some View {
         if hide {
             content.overlay(RoundedRectangle(cornerRadius: hideMaskRadius)
                 .foregroundStyle(hideMaskColor)
@@ -40,11 +40,11 @@ private struct ShimmerModifier: ViewModifier {
     }
     
     public func body(content: Content) -> some View {
-        let startPoint = isInitialState
+        let startPoint = isAnimating
         ? UnitPoint(x: -0.3, y: -0.3)
         : UnitPoint(x: 1, y: 1)
         
-        let endPoint = isInitialState
+        let endPoint = isAnimating
         ? UnitPoint(x: 0, y: 0)
         : UnitPoint(x: 1.3, y: 1.3)
         
@@ -53,15 +53,13 @@ private struct ShimmerModifier: ViewModifier {
             .delay(animationDelay)
             .repeatForever(autoreverses: false)
         
-        applyHideMaskOnContent(content: content)
-            .mask(LinearGradient(
-                gradient: gradient,
-                startPoint: startPoint,
-                endPoint: endPoint)
+        applyHideMaskOnContentIfNecessary(content: content)
+            .mask(LinearGradient(gradient: gradient, startPoint: startPoint, endPoint: endPoint)
                 .mask(RoundedRectangle(cornerRadius: hideMaskRadius)))
             .onAppear {
+                isAnimating = true
                 withAnimation(animation) {
-                    isInitialState = false
+                    isAnimating = false
                 }
             }
     }
