@@ -7,7 +7,7 @@ let package = Package(
     name: "ShimmerFX",
     platforms: [
         .macOS(.v14),
-        .iOS(.v14),
+        .iOS(.v15),
         .watchOS(.v10),
         .tvOS(.v17)
     ],

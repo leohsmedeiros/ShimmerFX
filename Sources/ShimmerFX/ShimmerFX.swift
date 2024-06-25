@@ -51,7 +51,7 @@ private struct ShimmerModifier: ViewModifier {
         let animation = Animation
             .linear(duration: animationDuration)
             .delay(animationDelay)
-            .repeatForever(autoreverses: false), value: isInitialState)
+            .repeatForever(autoreverses: false)
         
         applyHideMaskOnContent(content: content)
             .mask(LinearGradient(
