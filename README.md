@@ -19,7 +19,7 @@ struct ShimmerizedView: View {
 - `shouldAddHideMask: Bool`: Controls whether a mask (overlay) should be added to hide certain parts of the view. (default value: true)
 - `hideMaskColor: Color`: Specifies the color of the mask. (default value: Color.gray)
 - `hideMaskRadius: CGFloat`: Defines the corner radius of the mask. (default value: 0.0)
-- `gradient: Gradient?`: Allows a custom gradient to be applied to the shimmering effect. If any gradient was provided will use the default created by the library. (default value: nil)
+- `gradient: Gradient?`: Allows a custom gradient to be applied to the shimmering effect. If no gradient was provided it will use the default created by the library. (default value: nil)
 - `animationDuration: TimeInterval`: Sets the duration of the shimmering animation cycle. (default value: 1.7)
 - `animationDelay: TimeInterval`: Specifies the delay before the shimmering animation starts. (default value: 0.5)
 
