@@ -24,12 +24,19 @@ struct ShimmerizedView: View {
 - `animationDelay: TimeInterval`: Specifies the delay before the shimmering animation starts. (default value: 0.5)
 
 ## Installation
-### Swift Package Manager
+- Swift Package Manager
 ```ruby
 .package(url: "https://github.com/leohsmedeiros/ShimmerFX.git", from: #version#)
 ```
 
-### CocoaPods
+- CocoaPods
 ```ruby
 pod 'ShimmerFX', '~> v1.0'
 ```
+## Key Features
+- Customizable Animations: Easily adjust the shimmer animation speed and colors to match your app's design.
+- Content Masking Options: Choose to hide the underlying content or display it while the shimmer effect is active.
+- Adjustable Mask Radius: Customize the radius of the shimmer mask.
+- Seamless Integration: Integrate ShimmerFX into your existing projects with minimal effort.
+- Performance Optimized: Ensure a smooth experience without compromising on speed.
+  
